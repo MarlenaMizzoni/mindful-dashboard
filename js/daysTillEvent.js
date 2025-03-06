@@ -1,18 +1,11 @@
 // Function
-const getDaysUntilEvent = (eventDate) => {
-  // Create Date objects for now and the event
-  const now = new Date();
-  const event = new Date(eventDate);
+// EWU Graudation Date
+const gradDay = "2025-06-23";
+const daysUntilGrad = getDaysUntilEvent(gradDay);
+console.log( daysUntilGrad );
 
-  // Clear time portion for accurate day calculation
-  now.setHours(0, 0, 0, 0);
-  event.setHours(0, 0, 0, 0);
-
-  // Calculate difference in milliseconds
-  const diffInTime = event.getTime() - now.getTime();
-
-  // Convert to days
-  const daysUntil = Math.ceil(diffInTime / (1000 * 60 * 60 * 24));
-
-  return daysUntil;
-};
+// Get HTML element
+const elemDaysUntilGrad = document.querySelector('.daysUntilGraduation');
+// Set to HTML
+elemDaysUntilGrad.textContent = daysUntilGrad;
+elemDaysUntilGrad.setAttribute("datetime", daysUntilGrad );
